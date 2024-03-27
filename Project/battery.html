@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low Battery Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            font-size: 50px;
+        }
+
+        #battery-info {
+            margin-bottom: 20px;
+            font-size: 50px;
+        }
+
+        #low-battery-alert {
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 50px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Low Battery Alert</h2>
+
+    <div id="battery-info">
+        <p id="battery-level">Battery Level: </p>
+    </div>
+
+    <div id="low-battery-alert">
+        Low Battery! Please charge your device.
+    </div>
+
+    <button onclick="checkBatteryStatus()">Check Battery</button>
+
+    <script>
+        function checkBatteryStatus() {
+            navigator.getBattery().then(function(battery) {
+                // Update battery level
+                updateBatteryLevel(battery.level);
+
+                // Check if battery level is below a certain threshold (e.g., 20%)
+                if (battery.level < 0.2) {
+                    showLowBatteryAlert();
+                } else {
+                    hideLowBatteryAlert();
+                }
+            });
+        }
+
+        function updateBatteryLevel(level) {
+            var batteryLevelElement = document.getElementById("battery-level");
+            batteryLevelElement.innerHTML = "Battery Level: " + (level * 100).toFixed(2) + "%";
+        }
+
+        function showLowBatteryAlert() {
+            var lowBatteryAlert = document.getElementById("low-battery-alert");
+            lowBatteryAlert.style.display = "block";
+        }
+
+        function hideLowBatteryAlert() {
+            var lowBatteryAlert = document.getElementById("low-battery-alert");
+            lowBatteryAlert.style.display = "none";
+        }
+    </script>
+</body>
+</html>

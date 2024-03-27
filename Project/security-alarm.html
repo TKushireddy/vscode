@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scream Alarm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            font-size: 60px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 80px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Scream Alarm</h1>
+    <button onclick="triggerAlarm()">Trigger Alarm
+         <audio controls>
+        <source src="siren.mp3" type="audio/mpeg">
+      </audio></button>
+
+    <script>
+        function triggerAlarm() {
+            // In a real application, you would play the selected scream sound.
+            // For simplicity, this example uses an alert.
+
+            // You can use the selected alarm type from the user settings.
+            var selectedAlarmType = getSelectedAlarmType();
+
+            switch (selectedAlarmType) {
+                case "maleScream":
+                    alert("Male voice scream!");
+                    break;
+                case "policeSiren":
+                    alert("Police siren!");
+                    break;
+                default:
+                    alert("Default scream sound!");
+                    break;
+            }
+        }
+
+        function getSelectedAlarmType() {
+            // In a real application, you would retrieve the user's selected alarm type from the settings.
+            // For simplicity, this example returns a default value.
+            return "default";
+        }
+    </script>
+
+</body>
+</html>

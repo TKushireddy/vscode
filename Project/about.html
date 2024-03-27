@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Safe - Women's Security</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1> WELCOME TO HOME PAGE</h1>
+    <img src="safe.png" alt="Stay Safe Logo" class="logo">
+
+    <div class="features">
+        <button id="screamAlarm" onclick="navigateTo('security-alarm.html')">
+            <img src="alarm.png" alt="Scream Alarm">
+            Scream Alarm
+            <h1> Designed to be activated in emergency situations, the "Scream Alarm" is a loud and attention-grabbing alert that helps women draw attention to themselves when feeling threatened.</h1>
+        </button>
+
+        <button id="fakeCallTimer" onclick="navigateTo('fakecall.html')">
+            <img src="call.png" alt="Fake Call Timer">
+            Fake Call Timer
+            <h1> A "Fake Call" feature is designed to help users create the illusion of receiving a genuine phone call.It is an applications to provide a discreet way for users to exit uncomfortable or unsafe situations.</h1>
+        </button>
+
+        <button id="whereAreYou" onclick="navigateTo('whereareyou.html')">
+            <img src="gps.png" alt="Where Are You">
+            Where Are You
+            <h1> GPS enables real-time tracking of a woman's location, providing accurate and up-to-date information about her whereabouts.Women's safety apps with GPS can send location-based safety alerts, notifying users about potential risks or unsafe areas.</h1>
+        </button>
+    </div>
+
+    <div class="features">
+        <button id="trackMe" onclick="navigateTo('track_me.html')">
+            <img src="track.png" alt="Track Me">
+            Track Me
+            <h1> A "Track Me" page is crucial in emergencies as it allows others to locate you quickly and efficiently. In times of urgency, providing your location can expedite assistance, ensuring that help reaches you promptly. This feature is especially valuable for emergency services, friends, or family trying to assist you in a crisis, enhancing overall safety and response times.
+            </h1>
+            </button>
+        </button>
+
+        <button id="friendsList" onclick="navigateTo('friends.html')">
+            <img src="friend.webp" alt="Friends List">
+            Friends List
+            <h1>A friend list is important in emergencies for quick and reliable contact. It enables efficient communication and coordination, ensuring that help can be sought or provided promptly when needed the most. Having a readily accessible friend list enhances support networks during critical situations.</h1>
+        </button>
+    </div>
+</div>
+
+<script>
+    function navigateTo(page) {
+        // Implement navigation logic, e.g., redirect to the selected page
+        window.location.href = page;
+    }
+</script>
+
+</body>
+</html>
+

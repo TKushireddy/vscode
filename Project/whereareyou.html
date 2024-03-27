@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Are You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            font-size: 50px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #friendSelect {
+            margin-top: 10px;
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Where Are You</h1>
+
+    <button onclick="pickAFriend()">Where Are You</button>
+
+    <div id="friendSelect" style="display: none;">
+        <label for="friendList">Pick a Friend:</label>
+        <select id="friendList">
+            <option value="friend1">Friend 1</option>
+            <option value="friend2">Friend 2</option>
+            <option value="friend3">Friend 3</option>
+        </select>
+
+        <button onclick="sendLocationRequest()">Send Request</button>
+    </div>
+
+    <script>
+        function pickAFriend() {
+            document.getElementById('friendSelect').style.display = 'block';
+        }
+
+        function sendLocationRequest() {
+            var friendSelect = document.getElementById('friendList');
+            var selectedFriend = friendSelect.options[friendSelect.selectedIndex].text;
+
+            // In a real application, you would send a request to the server to get the friend's location.
+            // For now, let's simulate the response.
+            var friendLocation = "Latitude: 37.7749, Longitude: -122.4194";
+
+            alert("Request sent to " + selectedFriend + "\nLocation: " + friendLocation);
+            document.getElementById('friendSelect').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Call Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+
+        }
+
+        h1 {
+            color: #333;
+            font-size: 50px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 30px;
+            
+        
+        }
+
+        input {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width:50%;
+            height:5vh;
+            font-size: 30px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fake Call Timer</h1>
+
+    <div>
+        <label for="callerName">Caller Name:</label>
+        <input type="text" id="callerName" placeholder="Enter caller's name">
+    </div>
+
+    <div>
+        <label for="timer">Set Timer (seconds):</label>
+        <input type="number" id="timer" placeholder="Enter timer duration">
+    </div>
+
+    <button onclick="scheduleFakeCall()">Schedule Fake Call</button>
+
+    <script>
+        function scheduleFakeCall() {
+            var callerName = document.getElementById('callerName').value;
+            var timerDuration = document.getElementById('timer').value;
+
+            if (callerName && timerDuration) {
+                // Convert timer duration to milliseconds
+                var timerInMillis = timerDuration * 1000;
+
+                // Schedule the fake call
+                setTimeout(function() {
+                    alert("Fake call from " + callerName);
+                }, timerInMillis);
+            } else {
+                alert("Please enter caller's name and timer duration.");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Contacts</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .contact-form {
+      text-align: flex;
+      padding: 20px;
+      font-size: 60px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 50px;
+    }
+
+    .form-group label {
+      display: cover;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 40px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 40px;
+    }
+
+    .submit-button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-form">
+    <h2>Emergency Contacts</h2>
+    <form id="emergencyForm">
+      <div class="form-group">
+        <label for="familyContact">Family Contact:</label>
+        <input type="text" id="familyContact" name="familyContact" required>
+      </div>
+      <div class="form-group">
+        <label for="friendContact">Friend Contact:</label>
+        <input type="text" id="friendContact" name="friendContact" required>
+      </div>
+      <div class="form-group">
+        <label for="additionalContact">Additional Contact:</label>
+        <input type="text" id="additionalContact" name="additionalContact">
+      </div>
+      <button type="button" class="submit-button" onclick="submitContacts()">Submit Contacts</button>
+    </form>
+  </div>
+
+  <script>
+    function submitContacts() {
+      // Placeholder function for submitting contacts
+      // You should replace this with actual code for server-side processing
+      var familyContact = document.getElementById('familyContact').value;
+      var friendContact = document.getElementById('friendContact').value;
+      var additionalContact = document.getElementById('additionalContact').value;
+
+      // Example: Log the contacts to the console (replace with actual AJAX or fetch request)
+      console.log('Family Contact:', familyContact);
+      console.log('Friend Contact:', friendContact);
+      console.log('Additional Contact:', additionalContact);
+
+      // Additional logic: Send the contacts to the server for storage
+      // Use AJAX or fetch to send data to the server
+      // Example using fetch:
+      /*
+      fetch('/save-contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          familyContact: familyContact,
+          friendContact: friendContact,
+          additionalContact: additionalContact,
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Server response:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+      */
+    }
+  </script>
+
+</body>
+</html>
